@@ -1,81 +1,42 @@
+import Script from "next/script";
+
+import { Reveal } from "@/components/reveal";
+
 export default function ContactUsPage() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6">
-      <h1 className="text-4xl font-semibold tracking-tight text-slate-900">Contact Us</h1>
-      <p className="mt-4 text-lg leading-8 text-slate-700">
-        Interested in joining MBF, partnering with us, or learning more? Send us a message.
-      </p>
-
-      <form className="mt-10 space-y-5 rounded-lg border border-slate-200 bg-white p-6">
-        <div className="grid gap-5 sm:grid-cols-2">
-          <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-            First Name
-            <input
-              type="text"
-              name="firstName"
-              required
-              className="rounded-md border border-slate-300 px-3 py-2 outline-none ring-blue-300 focus:ring-2"
-            />
-          </label>
-          <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-            Last Name
-            <input
-              type="text"
-              name="lastName"
-              required
-              className="rounded-md border border-slate-300 px-3 py-2 outline-none ring-blue-300 focus:ring-2"
-            />
-          </label>
+    <div>
+      <section className="page-intro border-b border-line">
+        <div className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6">
+          <Reveal>
+            <p className="eyebrow">Get in touch</p>
+            <h1 className="page-title mt-3 text-foreground">Contact Us</h1>
+            <p className="mt-5 text-lg leading-8 text-muted">
+              Interested in joining MBF, partnering with us, or learning more? Send us a message.
+            </p>
+          </Reveal>
         </div>
+      </section>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-            Email
-            <input
-              type="email"
-              name="email"
-              required
-              className="rounded-md border border-slate-300 px-3 py-2 outline-none ring-blue-300 focus:ring-2"
-            />
-          </label>
-          <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-            Phone
-            <input
-              type="tel"
-              name="phone"
-              required
-              className="rounded-md border border-slate-300 px-3 py-2 outline-none ring-blue-300 focus:ring-2"
-            />
-          </label>
+      <section className="section-warm">
+        <div className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-6">
+          <Reveal>
+            <div className="rounded-2xl border border-line bg-white/95 p-6 shadow-sm sm:p-8">
+              <div data-tf-live="01M23DT2GNQF574PJHHQPGN6E4" />
+              <Script src="https://embed.typeform.com/next/embed.js" strategy="afterInteractive" />
+            </div>
+          </Reveal>
+
+          <Reveal className="mt-10 text-center text-sm text-muted" delayMs={100}>
+            Or email{" "}
+            <a
+              href="mailto:minutemenblockchainfund@gmail.com"
+              className="font-semibold text-brand hover:text-brand-hover"
+            >
+              minutemenblockchainfund@gmail.com
+            </a>
+          </Reveal>
         </div>
-
-        <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-          Subject
-          <input
-            type="text"
-            name="subject"
-            required
-            className="rounded-md border border-slate-300 px-3 py-2 outline-none ring-blue-300 focus:ring-2"
-          />
-        </label>
-
-        <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-          Message
-          <textarea
-            name="message"
-            required
-            rows={6}
-            className="rounded-md border border-slate-300 px-3 py-2 outline-none ring-blue-300 focus:ring-2"
-          />
-        </label>
-
-        <button
-          type="submit"
-          className="rounded-md bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-500"
-        >
-          Send Message
-        </button>
-      </form>
-    </section>
+      </section>
+    </div>
   );
 }
